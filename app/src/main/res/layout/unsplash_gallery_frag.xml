@@ -7,14 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:tools="http://schemas.android.com/tools">
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true" />
-
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_below="@+id/search"
             android:id="@+id/rvImage"
             tools:listitem="@layout/rv_image_view"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
