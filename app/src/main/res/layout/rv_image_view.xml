@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="unsplash"
+            type="com.images.unsplashsampleapp.data.model.DataModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            app:image="@{unsplash.thumbnailUrl}"
+            android:id="@+id/ivSplashImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_alignBottom="@id/ivSplashImg"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/gradient_view"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            tools:text="@{unsplash.title}"
+            android:textColor="#FFF"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_alignBottom="@id/ivSplashImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+</layout>
+
+
