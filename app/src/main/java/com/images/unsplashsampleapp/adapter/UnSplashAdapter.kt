@@ -1,6 +1,5 @@
 package com.images.unsplashsampleapp.adapter
 
-import android.graphics.Movie
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -86,11 +85,12 @@ class UnSplashAdapter(private val listener: RecyclerViewClickListener) : Recycle
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 dataModelListFull = results?.values as ArrayList<DataModel>
-                notifyDataSetChanged()
+                if(dataModelListFull.isNullOrEmpty()) {
+                    setBookmark(dataModelListFull)
+                }else{
+                    setBookmark(dataModelList)
+                }
             }
-
         }
     }
-
-
 }
