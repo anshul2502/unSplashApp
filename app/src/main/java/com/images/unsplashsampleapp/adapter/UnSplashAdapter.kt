@@ -85,11 +85,7 @@ class UnSplashAdapter(private val listener: RecyclerViewClickListener) : Recycle
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 dataModelListFull = results?.values as ArrayList<DataModel>
-                if(dataModelListFull.isNullOrEmpty()) {
-                    setBookmark(dataModelListFull)
-                }else{
-                    setBookmark(dataModelList)
-                }
+                setBookmark(dataModelListFull)
             }
         }
     }
